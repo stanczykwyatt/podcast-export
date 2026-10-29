@@ -46,3 +46,7 @@ The only entitlements are `com.apple.security.app-sandbox`, the read-only Apple 
 - **Nothing is written inside the Apple Podcasts library,** or anywhere in the group container that holds it. The export folder, or the file you save, can't be in it. The command line tool checks against both the library it reads and your real one, so reading a backup can't write into the original.
 - **The command line tool isn't sandboxed,** since it runs as you in your terminal. It uses the same code as the app, so it reads Apple Podcasts the same way, through a copy, and writes only into the folder you give it. `podcast-export opml` prints to your terminal, so private feeds appear there; that's the point of it. CI checks that only the export code writes files.
 - It has no dependencies. Every line that runs is in this repository.
+
+## The signature
+
+Releases are signed ad hoc, not with a paid Apple Developer ID. macOS ties the Full Disk Access you grant to that exact build, so no other program can borrow it by claiming to be Podcast Export. The catch is that each update counts as a new app: after updating, turn Full Disk Access on again in System Settings → Privacy & Security → Full Disk Access. macOS may also ask whether the new version can use the old one's data; that's just its settings. A Developer ID signature, which would keep the permission across updates, is planned.
