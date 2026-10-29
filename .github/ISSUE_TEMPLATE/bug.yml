@@ -1,0 +1,34 @@
+name: Bug report
+description: Something isn't working, or a show or episode came out wrong.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What were you doing, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Describe the show or episode rather than attaching files, like "a show I follow is missing from the OPML" or "an episode I finished shows 0%". Please don't paste your OPML file, a private feed's address or anything else you'd rather keep private.
+  - type: input
+    id: app
+    attributes:
+      label: The podcast app you're importing into
+      description: If the OPML file is the problem, like Overcast, Pocket Casts or AntennaPod.
+  - type: input
+    id: version
+    attributes:
+      label: Podcast Export version
+      description: Menu bar icon → About Podcast Export, or `podcast-export --version`.
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+    validations:
+      required: true
