@@ -105,6 +105,8 @@ The export folder ends up with `Podcasts.opml`, `Podcasts.md`, `Listening Histor
 
 ## Install
 
+> **Tested so far:** the export code has been run against a real Apple Podcasts library from the command line tool and from a sandboxed test build with the app's exact permissions. The signed app itself hasn't been tried with Full Disk Access turned on yet. If something doesn't work, please [open an issue](https://github.com/stanczykwyatt/podcast-export/issues).
+
 1. [Download **Podcast-Export.zip**](https://github.com/stanczykwyatt/podcast-export/releases/latest/download/Podcast-Export.zip) and unzip it.
 2. Move **Podcast Export** to your Applications folder and open it.
 3. Turn on Full Disk Access when it asks: **System Settings → Privacy & Security → Full Disk Access**, then switch on Podcast Export. The window has a button that opens the right page.
