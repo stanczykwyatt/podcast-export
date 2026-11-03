@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Podcast Export: export Apple Podcasts subscriptions as OPML and your listening history on Mac</title>
+  <title>Podcast Export: Apple Podcasts to OPML on Mac</title>
   <meta name="description" content="Podcast Export is a free, open-source Mac menu bar app that exports the shows you follow in Apple Podcasts as OPML for any podcast app, plus your listening history as Markdown notes, CSV and JSON. Only what's new on each run, read-only and with no internet access.">
   <meta name="keywords" content="export apple podcasts opml mac, apple podcasts opml export, apple podcasts listening history, export podcast subscriptions, move from apple podcasts to overcast, apple podcasts to pocket casts, podcasts to obsidian, menu bar app">
   <link rel="canonical" href="https://stanczykwyatt.github.io/podcast-export/">
@@ -56,38 +56,53 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I export my Apple Podcasts subscriptions as OPML on a Mac?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Apple Podcasts on the Mac doesn't have an OPML export. Podcast Export reads the shows you follow and saves them as an OPML file, which Overcast, Pocket Casts, Castro, AntennaPod and most other podcast apps import." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I see my Apple Podcasts listening history?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Podcast Export lists every episode you've played, by show, with the day you last played it and how far you got, and exports it as a note per show and a CSV spreadsheet." }
-      },
-      {
-        "@type": "Question",
-        "name": "Why is a show missing from the OPML file?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Either you don't follow it, or it has no public feed, like some shows only Apple hosts. No other app could follow those, so they're left out of the OPML file and listed in your notes." }
-      },
-      {
-        "@type": "Question",
-        "name": "Will Podcast Export change or delete anything in Apple Podcasts?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. The App Sandbox only lets it read Apple Podcasts' folder, and it reads a copy of the database rather than the database itself. It never deletes anything, and never overwrites a file you've edited." }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does Podcast Export need Full Disk Access?",
-        "acceptedAnswer": { "@type": "Answer", "text": "macOS keeps Apple Podcasts' library in a protected folder no other app can read without it. Podcast Export's App Sandbox still limits it to that folder, read-only, plus the export folder you choose." }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I get my shows out of Apple Podcasts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apple Podcasts on the Mac has no export. Choose Save Subscriptions as OPML… from Podcast Export's menu bar icon, then import the file in your new podcast app, usually under Settings or Import."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see what I've listened to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The window lists every episode you've played, by show, with the day you last played it and how far you got. Apple Podcasts keeps one date per episode, the last time you played it, so that's what you get. Export it for a note per show and a spreadsheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is a show missing from the OPML file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Either you don't follow it, or it has no public feed, like some shows only Apple hosts. No other app could follow those, so they're listed in your notes instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it need Full Disk Access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "macOS keeps Apple Podcasts' library in a protected folder no other app can read without it. Podcast Export's App Sandbox still limits it to that one folder, read-only, plus the export folder you choose. The details are in SECURITY.md."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will it change or delete anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It can only read Apple Podcasts, and it reads a copy of its database rather than the database itself. It never deletes anything, and never overwrites a file you've edited. It doesn't export show notes or transcripts either: those belong to the shows."
+      }
+    }
+  ]
+}
+</script>
 
   <style>
     :root {
